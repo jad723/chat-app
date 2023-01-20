@@ -36,7 +36,7 @@ public class Server implements Runnable {
                 pool.execute(handler);
             }
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             shutdown();
         }
 
@@ -167,6 +167,14 @@ public class Server implements Runnable {
             }
 
         }
+
+    }
+
+    public static void main(String[] args) {
+
+        Server server = new Server();
+
+        server.run();
 
     }
 }
