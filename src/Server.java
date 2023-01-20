@@ -127,7 +127,7 @@ public class Server implements Runnable {
 
                                 broadcast(nickname + " renamed themselves to " + messageSplit[1]);
 
-                                out.println(nickname + " renamed themselves to " + messageSplit[1]);
+                                System.out.println(nickname + " renamed themselves to " + messageSplit[1]);
 
                                 nickname = messageSplit[1];
 
