@@ -16,7 +16,7 @@ public class Client implements Runnable {
 
         try {
 
-            Socket client = new Socket("127.0.0.1", 9999);
+            client = new Socket("127.0.0.1", 9999);
             out = new PrintWriter(client.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
@@ -63,6 +63,8 @@ public class Client implements Runnable {
                     String message = inReader.readLine();
 
                     if (message.equals("/quit")) {
+
+                        out.println(message);
 
                         inReader.close();
                         shutdown();

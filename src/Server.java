@@ -58,6 +58,8 @@ public class Server implements Runnable {
 
             done = true;
 
+            pool.shutdown();
+
             if (!server.isClosed()) server.close();
 
             for(ConnectionHandler ch: connections){
